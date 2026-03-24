@@ -78,11 +78,11 @@ class Runner(dbus.service.Object):
         # https://developer.valvesoftware.com/wiki/Steam_browser_protocol
         # https://developer.valvesoftware.com/wiki/Command_line_options#Steam
         if action == "":
-            subprocess.Popen(["steam", "steam://rungameid/" + appid, "-silent"])
+            subprocess.Popen(["xdg-open", "steam://rungameid/" + appid])
         elif action == "library":
-            subprocess.Popen(["steam", "steam://nav/games/details/" + appid])
+            subprocess.Popen(["xdg-open", "steam://nav/games/details/" + appid])
         elif action == "community-hub":
-            subprocess.Popen(["steam", "steam://url/SteamWorkshopPage/" + appid])
+            subprocess.Popen(["xdg-open", "steam://url/SteamWorkshopPage/" + appid])
         elif action == "local-files":
             subprocess.Popen(["xdg-open", self.steam_library[appid]["local-files"]])
 
