@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 appid_blacklist = [
     "228980",  # Steamworks Common Redistributables
@@ -7,7 +7,7 @@ appid_blacklist = [
     "1070560", # Steam Linux Runtime 1.0 (scout)
     "1391110", # Steam Linux Runtime 2.0 (soldier)
     "1628350", # Steam Linux Runtime 3.0 (sniper)
-    "3810310", # Steam Linux Runtime 3.0 - Arm64 (sniper) 
+    "3810310", # Steam Linux Runtime 3.0 - Arm64 (sniper)
     "4183110", # Steam Linux Runtime 4.0
     "4185400", # Steam Linux Runtime 4.0 - Arm64
     "858280",  # Proton 3.7
