@@ -44,7 +44,14 @@ class Runner(dbus.service.Object):
     def __init__(self):
         import os
 
-        self.steam_root = os.path.expanduser("~/.local/share/Steam")
+        native_steam_root = os.path.expanduser("~/.local/share/Steam")
+        flatpak_steam_root = os.path.expanduser("~/.var/app/com.valvesoftware.Steam/.local/share/Steam")
+
+        if os.path.isdir(native_steam_root):
+            self.steam_root = native_steam_root
+        else:
+            self.steam_root = flatpak_steam_root
+
         self.libraryfolders_path = self.steam_root + "/steamapps/libraryfolders.vdf"
         self.reload_steam_library()
 
